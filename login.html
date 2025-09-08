@@ -7,6 +7,17 @@
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
+    <div class="nav">
+        <div class="nav-inner">
+            <button class="menu-toggle" aria-expanded="false" aria-controls="primary-nav">Menu</button>
+            <div class="nav-links" id="primary-nav">
+                <a href="index.html">Home</a>
+                <a href="rankings.html">Game Rankings</a>
+                <a href="login.html">Login</a>
+                <a href="register.html">Register</a>
+            </div>
+        </div>
+    </div>
     <div class="container">
         <h2>Login to Roblox</h2>
         <div class="input-group">
@@ -22,5 +33,17 @@
             <a href="register.html">Don't have an account? Register</a>
         </div>
     </div>
+    <script>
+    (function(){
+      var btn = document.querySelector('.menu-toggle');
+      var links = document.getElementById('primary-nav');
+      if(btn && links){
+        btn.addEventListener('click', function(){
+          var isOpen = links.classList.toggle('open');
+          btn.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+        });
+      }
+    })();
+    </script>
 </body>
 </html>
